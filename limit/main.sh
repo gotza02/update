@@ -21,10 +21,10 @@ ISP=$(cat /etc/xray/isp)
 CITY=$(cat /etc/xray/city)
 ipsaya=$(wget -qO- /ipinfo.io/ip)
 
-TIMES="10"
-CHATID="-1002092950564"
-KEY="6552005211:AAGLiCWOpcfR_PEeUx89Hocoe7mMDtsCHm4"
-URL="https://api.telegram.org/bot$KEY/sendMessage"
+#TIMES="10"
+#CHATID="-1002092950564"
+#KEY="6552005211:AAGLiCWOpcfR_PEeUx89Hocoe7mMDtsCHm4"
+#URL="https://api.telegram.org/bot$KEY/sendMessage"
 # ===================
 clear
   # // Exporting IP Address Information
@@ -100,9 +100,9 @@ clear
 #########################
 # USERNAME
 rm -f /usr/bin/user
-username=$(curl https://raw.githubusercontent.com/izzstores/vps/main/izin | grep $MYIP | awk '{print $2}')
+username=Bliv
 echo "$username" >/usr/bin/user
-expx=$(curl https://raw.githubusercontent.com/izzstores/vps/main/izin | grep $MYIP | awk '{print $3}')
+expx=2030-01-01
 echo "$expx" >/usr/bin/e
 # DETAIL ORDER
 username=$(cat /usr/bin/user)
@@ -126,7 +126,7 @@ mai="datediff "$Exp" "$DATE""
 Info="(${green}Active${NC})"
 Error="(${RED}Expired${NC})"
 today=$(date -d "0 days" +"%Y-%m-%d")
-Exp1=$(curl https://raw.githubusercontent.com/izzstores/vps/main/izin | grep $MYIP | awk '{print $4}')
+Exp1=$( curl -s https://ipinfo.io/ip/ )
 if [[ $today < $Exp1 ]]; then
 sts="${Info}"
 else
@@ -316,30 +316,30 @@ clear
 clear
 #CHANGE DEFAULT PASSWORD
 restart_system(){
-    USRSC=$(curl -sS https://raw.githubusercontent.com/izzstores/vps/main/izin | grep $MYIP | awk '{print $2}')
-    EXPSC=$(curl -sS https://raw.githubusercontent.com/izzstores/vps/main/izin | grep $MYIP | awk '{print $3}')
+    USRSC=Bliv
+    EXPSC=2030-01-01
     TIMEZONE=$(printf '%(%H:%M:%S)T')
-    TEXT="
-<code>────────────────────</code>
-<b>🔥AUTOSCRIPT PREMIUM🔥</b>
-<code>────────────────────</code>
-<code>Owner    :</code><code>$USRSC</code>
-<code>Domain   :</code><code>$domain</code>
-<code>IPVPS    :</code><code>$ipsaya</code>
-<code>ISP      :</code><code>$ISP</code>
-<code>CITY     :</code><code>$CITY</code>
-<code>Time     :</code><code>$TIMEZONE</code>
-<code>Exp Sc.  :</code><code>$EXPSC</code>
-<code>────────────────────</code>
-<b> SABDO PALON SCRIPT  </b>
-<code>────────────────────</code>
-<i>Automatic Notifications From Github</i>
-"'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ🐳","url":"https://t.me/YinnVpn"}]]}' 
-#"'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ2
+#    TEXT="
+#<code>────────────────────</code>
+#<b>🔥AUTOSCRIPT PREMIUM🔥</b>
+#<code>────────────────────</code>
+#<code>Owner    :</code><code>$USRSC</code>
+#<code>Domain   :</code><code>$domain</code>
+#<code>IPVPS    :</code><code>$ipsaya</code>
+#<code>ISP      :</code><code>$ISP</code>
+#<code>CITY     :</code><code>$CITY</code>
+#<code>Time     :</code><code>$TIMEZONE</code>
+#<code>Exp Sc.  :</code><code>$EXPSC</code>
+#<code>────────────────────</code>
+#<b> SABDO PALON SCRIPT  </b>
+#<code>────────────────────</code>
+#<i>Automatic Notifications From Github</i>
+#"'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ🐳","url":"https://t.me/YinnVpn"}]]}' 
+##"'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ2
 
-","url":"https://wa.me/6287824016438"}]]}'
-    curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
-}
+#","url":"https://wa.me/6287824016438"}]]}'
+#    curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
+#}
 clear
 # Setup SSL
 function setup_ssl() {
