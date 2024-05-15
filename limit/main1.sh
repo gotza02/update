@@ -135,7 +135,7 @@ fi
 echo -e "\e[32mloading...\e[0m"
 clear
 # REPO    
-    REPO="https://raw.githubusercontent.com/izzstores/vps/main/"
+    REPO="https://raw.githubusercontent.com/gotza02/update/main/"
 
 ####
 start=$(date +%s)
